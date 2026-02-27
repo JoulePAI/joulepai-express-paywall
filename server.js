@@ -14,7 +14,7 @@ const express = require('express');
 const paywall = require('./joulepai-paywall');
 
 const app = express();
-app.use(express.json());
+app.use(express.json({ limit: '100kb' }));
 
 const PORT = process.env.PORT || 3000;
 const HANDLE = process.env.JOULEPAI_HANDLE;
